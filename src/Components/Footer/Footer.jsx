@@ -21,7 +21,7 @@ const Footer = () => {
               </svg>
             </div>
             <span className="self-center text-2xl font-semibold">
-              Brand name
+              Digicacy Apps
             </span>
           </a>
         </div>

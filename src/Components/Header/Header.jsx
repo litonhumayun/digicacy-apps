@@ -1,24 +1,33 @@
 import React from "react";
+import { NavLink } from "react-router";
+import Apps from "../../Pages/Apps/Apps";
+import Installation from "../../Pages/Installation/Installation";
+import { BiHome } from "react-icons/bi";
+import { RiAppStoreLine } from "react-icons/ri";
+import { MdInstallDesktop } from "react-icons/md";
+import { FaSquareGithub } from "react-icons/fa6";
 
 const Header = () => {
   const links = (
     <>
       <li>
-        <a>Item 1</a>
+        <NavLink to={"/"}>
+          {" "}
+          <BiHome />
+          Home
+        </NavLink>
       </li>
       <li>
-        <a>Parent</a>
-        <ul className="p-2">
-          <li>
-            <a>Submenu 1</a>
-          </li>
-          <li>
-            <a>Submenu 2</a>
-          </li>
-        </ul>
+        <NavLink to={"/apps"}>
+          <RiAppStoreLine />
+          Apps
+        </NavLink>
       </li>
       <li>
-        <a>Item 3</a>
+        <NavLink to={"/installation"}>
+          <MdInstallDesktop />
+          Installation
+        </NavLink>
       </li>
     </>
   );
@@ -50,13 +59,18 @@ const Header = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+        <a className="btn btn-ghost text-xl" to={"/"}>
+          Digicacy Apps
+        </a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        <a className="btn">
+          <FaSquareGithub />
+          Contribute
+        </a>
       </div>
     </div>
   );
