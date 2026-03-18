@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import Apps from "../../Pages/Apps/Apps";
 import Installation from "../../Pages/Installation/Installation";
 import { BiHome } from "react-icons/bi";
@@ -59,9 +59,9 @@ const Header = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl" to={"/"}>
+        <Link className="btn btn-ghost text-xl" to={"/"}>
           Digicacy Apps
-        </a>
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
