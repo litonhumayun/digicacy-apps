@@ -2,7 +2,7 @@ import React from "react";
 import { createBrowserRouter } from "react-router";
 import Home from "../Pages/Home/Home";
 import Layout from "../Components/Layout/Layout";
-import Installation from "../Pages/Installation/Installation";
+import MyInstallation from "../Pages/MyInstallation/MyInstallation";
 import Apps from "../Pages/Apps/Apps";
 import AppDetails from "../Pages/AppDetails";
 
@@ -42,7 +42,7 @@ export const router = createBrowserRouter([
           return app;
         },
       },
-      { path: "/installation", Component: Installation },
+      { path: "/my-installation", Component: MyInstallation },
     ],
   },
 ]);

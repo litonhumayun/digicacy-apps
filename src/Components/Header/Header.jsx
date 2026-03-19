@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, NavLink } from "react-router";
 import Apps from "../../Pages/Apps/Apps";
-import Installation from "../../Pages/Installation/Installation";
+import MyInstallation from "../../Pages/MyInstallation/MyInstallation";
 import { BiHome } from "react-icons/bi";
 import { RiAppStoreLine } from "react-icons/ri";
 import { MdInstallDesktop } from "react-icons/md";
@@ -23,7 +23,7 @@ const Header = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink to={"/installation"}>
+        <NavLink to={"/my-installation"}>
           <MdInstallDesktop />
           Installation
         </NavLink>
@@ -66,10 +66,10 @@ const Header = () => {
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">
+        <Link to={"https://github.com/litonhumayun"} className="btn">
           <FaSquareGithub />
           Contribute
-        </a>
+        </Link>
       </div>
     </div>
   );
