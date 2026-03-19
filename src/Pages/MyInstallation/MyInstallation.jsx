@@ -1,6 +1,6 @@
 import React from "react";
 
-const Installation = () => {
+const MyInstallation = () => {
   return (
     <div>
       <h4>This is installation page</h4>
@@ -8,4 +8,4 @@ const Installation = () => {
   );
 };
 
-export default Installation;
+export default MyInstallation;

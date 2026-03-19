@@ -12,7 +12,6 @@ const Header = () => {
     <>
       <li>
         <NavLink to={"/"}>
-          {" "}
           <BiHome />
           Home
         </NavLink>
