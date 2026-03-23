@@ -44,7 +44,14 @@ export const router = createBrowserRouter([
           return app;
         },
       },
-      { path: "/my-installation", Component: MyInstallation },
+      {
+        path: "/my-installation",
+        Component: MyInstallation,
+        loader: async () => {
+          await new Promise((resolve) => setTimeout(resolve, 500));
+          return null;
+        },
+      },
     ],
   },
 ]);
