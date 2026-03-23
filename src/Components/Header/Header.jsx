@@ -8,22 +8,25 @@ import { MdInstallDesktop } from "react-icons/md";
 import { FaSquareGithub } from "react-icons/fa6";
 
 const Header = () => {
+  const navClass = ({ isActive }) =>
+    isActive ? "border-b-2 border-primary" : "";
+
   const links = (
     <>
       <li>
-        <NavLink to={"/"}>
+        <NavLink to={"/"} className={navClass} end>
           <BiHome />
           Home
         </NavLink>
       </li>
       <li>
-        <NavLink to={"/apps"}>
+        <NavLink to={"/apps"} className={navClass}>
           <RiAppStoreLine />
           Apps
         </NavLink>
       </li>
       <li>
-        <NavLink to={"/my-installation"}>
+        <NavLink to={"/my-installation"} className={navClass}>
           <MdInstallDesktop />
           Installation
         </NavLink>

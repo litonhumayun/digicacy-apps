@@ -1,80 +1,41 @@
 import React from "react";
+import { IoDownloadSharp } from "react-icons/io5";
+import { IoStarSharp } from "react-icons/io5";
+import { LiaUsersCogSolid } from "react-icons/lia";
 
 const Stats = () => {
   return (
-    <div className="max-w-6xl mx-auto text-center mt-12">
-      {/* Heading */}
-      <h1 className="text-3xl font-bold mb-8">
+    <div className="w-full text-center mt-12 bg-linear-to-r from-violet-600 via-purple-600 to-indigo-600 py-16 px-6">
+      <h1 className="text-5xl font-bold mb-8 text-white">
         Trusted by Millions, Built for You
       </h1>
 
-      {/* Stats */}
       <div className="flex justify-center">
-        <div className="stats stats-vertical sm:stats-horizontal shadow">
-          {/* Stat 1 */}
-          <div className="stat">
-            <div className="stat-figure text-secondary">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                className="inline-block h-8 w-8 stroke-current"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
+        <div className="stats stats-vertical sm:stats-horizontal shadow-2xl w-full max-w-5xl">
+          <div className="stat bg-white/10 backdrop-blur-sm text-white group hover:bg-white/20 transition-all duration-300">
+            <div className="stat-figure text-white">
+              <IoDownloadSharp className="text-5xl transition-transform duration-300 group-hover:scale-125" />
             </div>
-            <div className="stat-title">Downloads</div>
-            <div className="stat-value">31K</div>
-            <div className="stat-desc">Jan 1st - Feb 1st</div>
+            <div className="stat-title text-white">Total Downloads</div>
+            <div className="stat-value text-white">29.6M</div>
+            <div className="stat-desc text-white">21% more than last month</div>
           </div>
 
-          {/* Stat 2 */}
-          <div className="stat">
-            <div className="stat-figure text-secondary">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                className="inline-block h-8 w-8 stroke-current"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
-                />
-              </svg>
+          <div className="stat bg-white/10 backdrop-blur-sm text-white group hover:bg-white/20 transition-all duration-300">
+            <div className="stat-figure text-white">
+              <IoStarSharp className="text-5xl transition-transform duration-300 group-hover:scale-125" />
             </div>
-            <div className="stat-title">New Users</div>
-            <div className="stat-value">4,200</div>
-            <div className="stat-desc">↗︎ 400 (22%)</div>
+            <div className="stat-title text-white">Total Reviews</div>
+            <div className="stat-value text-white">906K</div>
+            <div className="stat-desc text-white">46% more than last month</div>
           </div>
-
-          {/* Stat 3 */}
-          <div className="stat">
-            <div className="stat-figure text-secondary">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                className="inline-block h-8 w-8 stroke-current"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"
-                />
-              </svg>
+          <div className="stat bg-white/10 backdrop-blur-sm text-white group hover:bg-white/20 transition-all duration-300">
+            <div className="stat-figure text-white">
+              <LiaUsersCogSolid className="text-5xl transition-transform duration-300 group-hover:scale-125" />
             </div>
-            <div className="stat-title">New Registers</div>
-            <div className="stat-value">1,200</div>
-            <div className="stat-desc">↘︎ 90 (14%)</div>
+            <div className="stat-title text-white">Total Reviews</div>
+            <div className="stat-value text-white">906K</div>
+            <div className="stat-desc text-white">46% more than last month</div>
           </div>
         </div>
       </div>

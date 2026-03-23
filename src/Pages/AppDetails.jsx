@@ -31,7 +31,7 @@ const AppDetails = () => {
   };
 
   return (
-    <div className="max-w-5xl mx-auto px-6 py-10 flex flex-col gap-10">
+    <div className="max-w-6xl mx-auto px-6 py-10 flex flex-col gap-10">
       <div className="flex flex-col md:flex-row gap-8">
         <div className="w-full md:w-1/3">
           <img
@@ -44,15 +44,15 @@ const AppDetails = () => {
         <div className="w-full md:w-2/3 flex flex-col gap-4">
           <div>
             <h1 className="text-3xl font-bold">
-              {app.title}{" "}
-              <span className="text-lg font-normal text-gray-500">
-                — {app.shortDescription}
-              </span>
+              {app.title}— {app.shortDescription}
+              <span className="text-lg font-normal text-gray-500"></span>
             </h1>
             <p className="text-sm text-gray-400 mt-1">
-              Developed by {app.companyName}
+              Developed by{" "}
+              <span className="text-primary">{app.companyName}</span>
             </p>
           </div>
+          <div className="divider divider-primary"></div>
 
           <div className="stats shadow w-full">
             <div className="stat">
@@ -64,6 +64,7 @@ const AppDetails = () => {
                 {formatNumber(app.downloads)}
               </div>
             </div>
+            <div className="divider lg:divider-horizontal"></div>
 
             <div className="stat">
               <div className="stat-figure text-secondary">
@@ -72,7 +73,7 @@ const AppDetails = () => {
               <div className="stat-title">Average Rating</div>
               <div className="stat-value text-secondary">{app.ratingAvg}</div>
             </div>
-
+            <div className="divider lg:divider-horizontal"></div>
             <div className="stat">
               <div className="stat-figure text-secondary">
                 <MdReviews size={24} />
@@ -97,17 +98,29 @@ const AppDetails = () => {
           </button>
         </div>
       </div>
+      <div className="divider"></div>
 
       <div className="bg-base-200 rounded-2xl p-6">
         <h2 className="text-2xl font-bold mb-4">Ratings Breakdown</h2>
         <RatingChart app={app} />
       </div>
+      <div className="divider"></div>
 
       <div className="bg-base-200 rounded-2xl p-6">
         <h2 className="text-2xl font-bold mb-4">About {app.title}</h2>
-        <p className="text-base leading-relaxed text-gray-600">
-          {app.description}
-        </p>
+        <div className="text-base leading-relaxed text-gray-600 flex flex-col gap-4">
+          {app.description
+            .split(". ")
+            .reduce((acc, sentence, i, arr) => {
+              const chunkIndex = Math.floor(i / Math.ceil(arr.length / 3));
+              if (!acc[chunkIndex]) acc[chunkIndex] = [];
+              acc[chunkIndex].push(sentence);
+              return acc;
+            }, [])
+            .map((chunk, i) => (
+              <p key={i}>{chunk.join(". ")}.</p>
+            ))}
+        </div>
       </div>
     </div>
   );

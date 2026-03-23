@@ -1,13 +1,16 @@
 import React from "react";
 import TrendingAppsCard from "../TrendingAppsCard/TrendingAppsCard";
 import { Link } from "react-router";
+import { FaArrowTrendUp } from "react-icons/fa6";
 
 const TrendingApps = ({ appsData }) => {
   const topApps = appsData.slice(0, 8);
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-12 text-center">
-      <h2 className="text-3xl font-bold mb-3">Trending Apps</h2>
+      <h2 className="text-5xl font-bold mb-3 flex items-center justify-center gap-2">
+        Trending Apps <FaArrowTrendUp className="text-purple-600" />
+      </h2>
       <p className="text-gray-500 mb-8">
         Discover the most popular and trending apps right now
       </p>

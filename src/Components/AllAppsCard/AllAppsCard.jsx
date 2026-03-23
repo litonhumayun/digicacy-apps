@@ -13,28 +13,24 @@ const AllAppsCard = ({ appData }) => {
   return (
     <button
       onClick={handleClick}
-      className="card bg-base-100 w-full shadow-md hover:shadow-xl transition duration-300"
+      className="card bg-base-300 max-w-full max-h-full shadow-sm p-4 transition-transform duration-300 ease-in-out hover:scale-110 hover:bg-blue-300"
     >
-      <figure className="h-48 w-full overflow-hidden px-6 pt-6">
-        <img
-          src={appData.image}
-          alt={appData.title}
-          className="rounded-xl w-full h-48 object-cover"
-        />
+      <figure className="h-48 w-full overflow-hidden">
+        <img src={appData.image} alt="Shoes" />
       </figure>
-
-      <div className="card-body items-center text-center">
-        <h2 className="card-title text-lg">
-          {appData.title}:<span>{appData.shortDescription}</span>
+      <div className="">
+        <h2 className="card-title mb-2">
+          {appData.title}: {appData.shortDescription}
         </h2>
-        <div className="flex justify-between items-center w-full mt-2">
-          <div className="flex items-center gap-1 text-sm text-gray-600">
-            <FiDownload />
-            <span>{appData.downloads}</span>
+
+        <div className="card-actions justify-between">
+          <div className="badge bg-green-100 text-green-600 px-3">
+            <FiDownload className="" />
+            {appData.downloads}
           </div>
-          <div className="flex items-center gap-1 text-sm text-yellow-500">
-            <FaStar />
-            <span>{appData.ratingAvg}</span>
+          <div className="badge bg-purple-200 text-purple-600 px-3">
+            <FaStar className="" />
+            {appData.ratingAvg}
           </div>
         </div>
       </div>

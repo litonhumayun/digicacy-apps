@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useLoaderData } from "react-router";
 import AllAppsCard from "../../Components/AllAppsCard/AllAppsCard";
-import NoAppFound from "../../Components/NoAppFound/NoAppFound";
+import NoAppsFound from "../../Components/NoAppsFound/NoAppsFound";
 
 const Apps = () => {
   const appsData = useLoaderData();
@@ -12,7 +12,7 @@ const Apps = () => {
   );
 
   return (
-    <div>
+    <div className="max-w-7xl mx-auto px-4 py-12 text-center">
       <div className="px-6 pt-6 text-center">
         <h1 className="text-5xl font-bold my-4">Our All Applications</h1>
         <p className="text-3xl mb-3">
@@ -31,15 +31,15 @@ const Apps = () => {
         />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {filteredApps.length === 0 ? (
-          <NoAppFound />
-        ) : (
-          filteredApps.map((appData) => (
+      {filteredApps.length === 0 ? (
+        <NoAppsFound />
+      ) : (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          {filteredApps.map((appData) => (
             <AllAppsCard key={appData.id} appData={appData} />
-          ))
-        )}
-      </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
